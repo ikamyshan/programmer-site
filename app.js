@@ -5,7 +5,8 @@ app.configure(function() {
     app.engine('html', require('uinexpress').__express) // Используем функцию "template" библиотеки underscore для рендеринга
     app.set('view engine', 'html')                      
     app.set('views', __dirname + "/tpl");
-     app.use(express.static(__dirname + "/public"));     // Делаем файлы из папки public доступными на сайте
+    app.set("view options", {layout: 'index.html'});
+    app.use(express.static(__dirname + "/public"));     // Делаем файлы из папки public доступными на сайте
 });
 
 app.get('/', function(req, res){          // Обрабатываем запрос корневой страницы "/"
