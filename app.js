@@ -10,7 +10,7 @@ app.configure(function() {
 });
 
 app.get('/', function(req, res){          // Обрабатываем запрос корневой страницы "/"
-    res.render('index.html');
+    res.render('layout.html');
 });
 
 var port = process.env.PORT || 5000;
